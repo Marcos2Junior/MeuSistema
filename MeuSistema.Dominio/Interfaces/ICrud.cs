@@ -8,6 +8,6 @@ namespace MeuSistema.Dominio.Interfaces
         Task<bool> AdicionarAsync(T entidade);
         Task<bool> AtualizarAsync(T entidade);
         Task<bool> DeletarAsync(T entidade);
-        Task<IEnumerable<T>> SelecionaTodosAsync();
+        Task<List<T>> SelecionaTodosAsync();
     }
 }

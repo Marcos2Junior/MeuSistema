@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Dominio", "0 - Dominio"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuSistema.Dominio", "MeuSistema.Dominio\MeuSistema.Dominio.csproj", "{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - WEB", "1 - WEB", "{7A4EE542-1270-4DDE-8BEC-18D2A03703EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - API", "1.1 - API", "{C2A11A61-693F-4366-9CAF-04C3973DC250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuSistema.API", "MeuSistema.API\MeuSistema.API.csproj", "{64BDD18D-5427-450B-8C25-4D9A38EE668B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +23,18 @@ Global
 		{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64BDD18D-5427-450B-8C25-4D9A38EE668B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BDD18D-5427-450B-8C25-4D9A38EE668B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BDD18D-5427-450B-8C25-4D9A38EE668B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64BDD18D-5427-450B-8C25-4D9A38EE668B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392} = {03AC3613-BB96-4A61-BE01-731BCE926666}
+		{C2A11A61-693F-4366-9CAF-04C3973DC250} = {7A4EE542-1270-4DDE-8BEC-18D2A03703EA}
+		{64BDD18D-5427-450B-8C25-4D9A38EE668B} = {C2A11A61-693F-4366-9CAF-04C3973DC250}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3FE6C646-B50C-4B3B-8333-F053BC6ED115}
