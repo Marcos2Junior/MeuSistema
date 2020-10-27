@@ -10,6 +10,12 @@ namespace MySystem.Domain.Repositorys
     public class MySystemRepository : IMySystemRepository
     {
         protected readonly MySystemDbContext _context;
+
+        public MySystemRepository(MySystemDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<bool> AdicionarAsync<T>(T entidade) where T : class
         {
             await _context.AddAsync<T>(entidade);

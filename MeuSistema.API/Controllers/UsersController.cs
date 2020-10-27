@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MySystem.API.Dtos;
+using MySystem.API.Services;
 using MySystem.Domain.Entitys;
 using MySystem.Domain.Enums;
 using MySystem.Domain.Interfaces;
@@ -22,7 +23,6 @@ namespace MySystem.API.Controllers
         private readonly IMapper _mapper;
 
         public UsersController(IUserRepository usuarioRepositorio,
-                               UserManager<User> userManager,
                                IMapper mapper)
         {
             _repo = usuarioRepositorio;
@@ -39,7 +39,6 @@ namespace MySystem.API.Controllers
                     await CreateDefaultUserAsync();
                 }
 
-                //User user = await _userManager.FindByLoginAsync(loginDto.Login);
 
 
                 return Ok();
@@ -57,7 +56,8 @@ namespace MySystem.API.Controllers
             return Ok();
         }
 
-        private async Task CreateDefaultUserAsync()
+        [HttpGet]
+        public async Task<IActionResult> CreateDefaultUserAsync()
         {
             var hasAdmins = await _repo.SelectAllAdmAsync();
 
@@ -65,13 +65,31 @@ namespace MySystem.API.Controllers
             {
                 await _repo.AdicionarAsync(new User
                 {
-                    Login = "admin",
+                    Email = "admin@admin",
                     Password = "admin",
-                    Date = DateTime.Now,
+                    Nick = "admin",
+                    Date = DateTime.UtcNow,
                     Role = Role.Administrador,
-                    Name = "usuario padrao"
+                    Name = "usuario padrao",
+                    MobilePhone = 99999999999,
+                    NotifyEmail = false,
+                    NotifyMobilePhone = false,
+                    KeyAcess = new KeyAcess
+                    {
+                        Date = DateTime.UtcNow,
+                        Expire = DateTime.UtcNow.AddDays(1),
+                        IdFileKey = 0,
+                        Key = "admin"
+                    }
                 });
+
+                var sdf = new FileKeyService(await _repo.SelectByIdAsync(6));
+
+                sdf.GenerateKeyAcess();
             }
+
+          
+            return Ok();
         }
     }
 }
