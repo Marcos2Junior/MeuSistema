@@ -1,22 +1,22 @@
-﻿using MeuSistema.Dominio.DbContexto;
-using MeuSistema.Dominio.Interfaces;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MySystem.Domain.DataContext;
+using MySystem.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MeuSistema.Dominio.Repositorios
+namespace MySystem.Domain.Repositorys
 {
-    public class Crud<T> : ICrud<T> where T : class
+    public class MySystemRepository : IMySystemRepository
     {
-        protected readonly MeuSistemaDbContexto _context;
-        public async Task<bool> AdicionarAsync(T entidade)
+        protected readonly MySystemDbContext _context;
+        public async Task<bool> AdicionarAsync<T>(T entidade) where T : class
         {
             await _context.AddAsync<T>(entidade);
             return await SalvarAsync();
         }
 
-        public async Task<bool> AtualizarAsync(T entidade)
+        public async Task<bool> AtualizarAsync<T>(T entidade) where T : class
         {
             if (_context.Entry<T>(entidade).State == EntityState.Detached)
             {
@@ -31,7 +31,7 @@ namespace MeuSistema.Dominio.Repositorios
             return await SalvarAsync();
         }
 
-        public async Task<bool> DeletarAsync(T entidade)
+        public async Task<bool> DeletarAsync<T>(T entidade) where T : class
         {
             try
             {
@@ -45,7 +45,7 @@ namespace MeuSistema.Dominio.Repositorios
             }
         }
 
-        public async Task<List<T>> SelecionaTodosAsync()
+        public async Task<List<T>> SelecionaTodosAsync<T>() where T : class
         {
             var result = new List<T>();
             try

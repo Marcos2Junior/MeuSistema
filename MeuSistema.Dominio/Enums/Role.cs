@@ -1,6 +1,6 @@
-﻿namespace MeuSistema.Dominio.Enums
+﻿namespace MySystem.Domain.Enums
 {
-    public enum Funcao
+    public enum Role
     {
         Administrador,
         Convidado,

@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Dominio", "0 - Dominio", "{03AC3613-BB96-4A61-BE01-731BCE926666}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuSistema.Dominio", "MeuSistema.Dominio\MeuSistema.Dominio.csproj", "{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySystem.Domain", "MeuSistema.Dominio\MySystem.Domain.csproj", "{BAA5C421-39EF-4DAA-984A-6AFE9D1EE392}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - WEB", "1 - WEB", "{7A4EE542-1270-4DDE-8BEC-18D2A03703EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - API", "1.1 - API", "{C2A11A61-693F-4366-9CAF-04C3973DC250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuSistema.API", "MeuSistema.API\MeuSistema.API.csproj", "{64BDD18D-5427-450B-8C25-4D9A38EE668B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySystem.API", "MeuSistema.API\MySystem.API.csproj", "{64BDD18D-5427-450B-8C25-4D9A38EE668B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
