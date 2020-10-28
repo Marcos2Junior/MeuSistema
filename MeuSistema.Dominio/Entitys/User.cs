@@ -1,5 +1,6 @@
 ﻿using MySystem.Domain.Enums;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MySystem.Domain.Entitys
@@ -14,11 +15,6 @@ namespace MySystem.Domain.Entitys
 
         [StringLength(10, MinimumLength = 4, ErrorMessage = "Apelido deve ter um tamanho de 4 a 10 caracteres.")]
         public string Nick { get; set; }
-
-        [Required(ErrorMessage = "Senha obrigatoria."), 
-            DataType(DataType.Password), 
-            StringLength(50, MinimumLength = 10, ErrorMessage = "Senha deve ter um tamanho de 10 a 50 caracteres.")]
-        public string Password { get; set; }
 
         [Required(ErrorMessage = "Email obrigatorio."), 
             DataType(DataType.EmailAddress),
@@ -43,5 +39,7 @@ namespace MySystem.Domain.Entitys
         [Required]
         public int KeyAcessId { get; set; }
         public KeyAcess KeyAcess { get; set; }
+
+        public List<Password> Passwords { get; set; }
     }
 }

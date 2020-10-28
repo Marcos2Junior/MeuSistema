@@ -34,12 +34,7 @@ namespace MySystem.API.Controllers
         {
             try
             {
-                if (loginDto.Login == "admin" && loginDto.Senha == "admin")
-                {
-                    await CreateDefaultUserAsync();
-                }
-
-
+                
 
                 return Ok();
             }
@@ -56,40 +51,5 @@ namespace MySystem.API.Controllers
             return Ok();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CreateDefaultUserAsync()
-        {
-            var hasAdmins = await _repo.SelectAllAdmAsync();
-
-            if (!hasAdmins.Any())
-            {
-                await _repo.AdicionarAsync(new User
-                {
-                    Email = "admin@admin",
-                    Password = "admin",
-                    Nick = "admin",
-                    Date = DateTime.UtcNow,
-                    Role = Role.Administrador,
-                    Name = "usuario padrao",
-                    MobilePhone = 99999999999,
-                    NotifyEmail = false,
-                    NotifyMobilePhone = false,
-                    KeyAcess = new KeyAcess
-                    {
-                        Date = DateTime.UtcNow,
-                        Expire = DateTime.UtcNow.AddDays(1),
-                        IdFileKey = 0,
-                        Key = "admin"
-                    }
-                });
-
-                var sdf = new FileKeyService(await _repo.SelectByIdAsync(6));
-
-                sdf.GenerateKeyAcess();
-            }
-
-          
-            return Ok();
-        }
     }
 }
